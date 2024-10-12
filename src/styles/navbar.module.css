@@ -1,0 +1,99 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border: 2px solid #e76f51;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e76f51;
+  }
+  
+  .searchForm {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+  }
+  
+  .searchWrapper {
+    display: flex;
+    align-items: center;
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    padding: 5px 10px;
+  }
+  
+  .searchIcon {
+    margin-right: 5px;
+    color: #555;
+  }
+  
+  .searchInput {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    padding: 5px;
+  }
+  
+  .icons {
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .icon {
+    font-size: 1.5rem;
+    margin-left: 20px;
+    cursor: pointer;
+    
+  }
+  
+  .toggleButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dark {
+    background-color: #18191b;
+    color: white;
+  }
+  
+  .dark .logo {
+    color: #e76f51;
+  }
+  
+  .dark .searchWrapper {
+    background-color: #fe9d4ee0;
+  }
+  
+  .dark .searchInput {
+    color: rgb(0, 0, 0);
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .searchForm {
+      margin: 10px 0;
+    }
+  }
+  
+
+
+
+  .lightButton {
+    color: #000000;    
+  }
+  .darkButton {
+    color: #fff; 
+
+  }
