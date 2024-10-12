@@ -1,13 +1,17 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    border: 2px solid #e76f51;
-    background-color: white;
-    border-radius: 5px;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border: 2px solid #e76f51;
+  background-color: white;
+  border-radius: 5px;
+  position: relative; /* Added to ensure z-index works */
+  z-index: 10; /* Higher z-index value to bring it above the sidebar */
+}
+
+/* Add other styles as needed */
+
   .logo {
     font-size: 1.5rem;
     font-weight: bold;

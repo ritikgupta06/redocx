@@ -52,7 +52,7 @@ export default function Navbar() {
         </div>
       </form>
       <div className={styles.icons}>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/ritikgupta06" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faGithub} className={styles.icon} />
         </a>
         <button
