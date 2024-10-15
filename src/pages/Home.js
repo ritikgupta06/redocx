@@ -1,24 +1,24 @@
-// pages/Homepage.js
-import { useState, useEffect } from "react";
-import styles from "@/styles/Home.module.css"; // Assuming your CSS file is named Home.module.css
+import React, { useState, useEffect } from "react";
+import styles from "@/styles/Home.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
 
-const Sidebar = ({ isSidebarActive, toggleSidebar, darkMode }) => {
+const Sidebar = ({ isSidebarActive, toggleSidebar, darkMode, topics }) => {
     return (
         <div className={`${styles.sidebar} ${isSidebarActive ? styles.active : ''} ${darkMode ? styles.dark : ''}`}>
             <div className={styles.logo}>Redocx</div>
             <ul>
-                <li className={styles.active}>Home</li>
-                <li>HTML</li>
-                <li>Django</li>
-                <li>Git and Github</li>
-                <li>C++</li>
-                <li>SQL</li>
-                <li>DevOps Stuff</li>
+                {topics.map(topic => (
+                    <li key={topic.name}>
+                        <Link href={`/?topic=${topic.file}`}>
+                            {topic.name}
+                        </Link>
+                    </li>
+                ))}
             </ul>
-           
         </div>
     );
 };
@@ -61,13 +61,23 @@ const Homepage = () => {
     const [darkMode, setDarkMode] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
     const [isSidebarActive, setSidebarActive] = useState(false);
+    const [markdownContent, setMarkdownContent] = useState("");
 
-    // Toggle dark mode
+    const topics = [
+        { name: "Home", file: "home.md" },
+        { name: "HTML", file: "html.md" },
+        { name: "Django", file: "django.md" },
+        { name: "Git and Github", file: "git.md" },
+        { name: "C++", file: "cpp.md" },  // This is the link for cpp.md
+        { name: "SQL", file: "sql.md" },
+        { name: "DevOps Stuff", file: "devops.md" }
+    ];
+
     const toggleDarkMode = () => {
         setDarkMode(!darkMode);
     };
 
-    // Persist dark mode setting in local storage
+    // Ensure dark mode is persisted in local storage
     useEffect(() => {
         const savedMode = localStorage.getItem("darkMode");
         if (savedMode === "true") {
@@ -83,6 +93,19 @@ const Homepage = () => {
             document.body.classList.remove(styles.dark);
         }
     }, [darkMode]);
+
+    // Fetch markdown only when on the client-side (after component mounts)
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const topic = new URLSearchParams(window.location.search).get("topic");
+            if (topic) {
+                fetch(`/markdown/${topic}`)
+                    .then(response => response.text())
+                    .then(text => setMarkdownContent(text))
+                    .catch(error => console.error("Error fetching markdown:", error));
+            }
+        }
+    }, []); // Empty dependency ensures it runs after the component mounts
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -102,11 +125,17 @@ const Homepage = () => {
                 setSearchTerm={setSearchTerm} 
                 handleSearch={handleSearch} 
             />
-            <Sidebar 
-                isSidebarActive={isSidebarActive} 
-                toggleSidebar={toggleSidebar} 
-                darkMode={darkMode} // Pass darkMode prop
-            />
+            <div className={styles.mainContent}>
+                <Sidebar 
+                    isSidebarActive={isSidebarActive} 
+                    toggleSidebar={toggleSidebar} 
+                    darkMode={darkMode} 
+                    topics={topics}
+                />
+                <div className={styles.contentArea}>
+                    <ReactMarkdown>{markdownContent}</ReactMarkdown>
+                </div>
+            </div>
         </div>
     );
 };
