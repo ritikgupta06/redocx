@@ -1,49 +1,57 @@
+/* navbar.module.css */
+
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 20px 20px 20px 10px;
-  border: 2px solid #00E0FF;
-  background-color: rgba(212, 212, 212, 0.576);
-  border-radius: 5px;
-  position: relative; /* Added to ensure z-index works */
-  z-index: 10; /* Higher z-index value to bring it above the sidebar */
-  width: 100%;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #00E0FF; /* Light background color */
+  color: #333333; /* Dark text color */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 18px;
 }
 
-/* Add other styles as needed */
+.navbar.dark {
+  background-color: #00E0FF; /* Dark background color */
+  color: #fff; /* Light text color */
+}
+
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #00E0FF;
 }
 
 .searchForm {
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
+  flex: 1;
+  margin: 0 1rem;
+
 }
 
 .searchWrapper {
   display: flex;
   align-items: center;
-  background-color: #e0e0e0;
-  border-radius: 20px;
-  padding: 5px 10px;
-}
-
-.searchIcon {
-  margin-right: 5px;
-  color: #555;
-
+  position: relative;
+  
 }
 
 .searchInput {
-  border: none;
-  background-color: transparent;
+  width: 50%;
+  padding: 0.5rem 2rem 0.5rem 1rem; /* Add padding for the search input */
+  border: 1px solid #ccc; /* Light border color */
+  border-radius: 4px;
   outline: none;
-  padding: 5px;
+  transition: border-color 0.3s ease;
+  border-radius: 20px;
+}
 
+.searchInput:focus {
+  border-color: #ffa600; /* Border color on focus */
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1px;
+  color: #000000; /* Icon color */
 }
 
 .icons {
@@ -53,60 +61,35 @@
 
 .icon {
   font-size: 1.5rem;
-  margin-left: 20px;
-  cursor: pointer;
+  margin-left: 1rem;
+  color: inherit; /* Use current text color */
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #f39a00; /* Change color on hover */
 }
 
 .toggleButton {
+  display: flex;
+  align-items: center;
   background: none;
   border: none;
   cursor: pointer;
+  padding: 0;
+  margin-left: 1rem;
 }
 
+.toggleButton.lightButton {
+  color: #000; /* Light mode button color */
+}
+
+.toggleButton.darkButton {
+  color: #fff; /* Dark mode button color */
+}
+
+/* Optional: Add styles for dark mode in the body */
 .dark {
-  background-color: #18191b;
-  color: white;
-}
-
-.dark .logo {
-  color: #00E0FF;
-}
-
-.dark .searchWrapper {
-  background-color: #00E0FF;
-}
-
-.dark .searchInput {
-  color: rgb(0, 0, 0);
-}
-
-.lightButton {
-  color: #000000;
-}
-
-.darkButton {
-  color: #fff;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: row; /* Stack items vertically on smaller screens */
-    align-items: flex-start;
-  }
-
-  .searchForm {
-    margin: 10px 0;
-    width: 100%;
-  }
-
-  .icons {
-    width: 100%;
-    justify-content: space-between; /* Space icons evenly on mobile */
-    margin-top: 10px;
-  }
-
-  .toggleButton {
-    margin-left: auto; /* Align toggle button to the right */
-  }
+  background-color: #121212; /* Dark background for the body */
+  color: #ffffff; /* Light text color for the body */
 }
