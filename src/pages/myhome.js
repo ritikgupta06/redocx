@@ -1,12 +1,30 @@
 import React from 'react';
-import Navbar from '@/components/navbar';
+
 import styles from '@/styles/Home.module.css';
 
-export default function Myhome() {
+
+const Hero = () => {
   return (
-    
-      <Navbar />
-      
-   
+    <section className={styles.hero}>
+      <div className={styles.textSection}>
+        <h1 className={styles.title}>Welcome to Redocx</h1>
+        <p className={styles.subtitle}>Your trusted documentation assistant</p>
+        <button className={styles.glowingBtn}>
+      <span className={styles.glowingTxt}>
+        RE<span className={styles.faultyLetter}>A</span>D
+      </span>
+    </button>
+      </div>
+      <div className={styles.imageSection}>
+        <img
+          src="/hero.png" // Replace with the actual image path
+          alt="Hero Section"
+          className={styles.heroImage}
+        />
+      </div>
+    </section>
   );
-}
+};
+
+export default Hero;
+

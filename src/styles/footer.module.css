@@ -1,0 +1,43 @@
+.bubbles {
+    position: relative;
+    height: 200px; /* Adjust height as needed */
+    overflow: hidden;
+  }
+  
+  .bubble {
+    position: absolute;
+    bottom: -10%; /* Start below the footer */
+    border-radius: 50%;
+    background: #00E0FF;
+    opacity: 0.7;
+    animation: rise var(--time) linear infinite;
+    animation-delay: var(--delay);
+    width: var(--size);
+    height: var(--size);
+    left: var(--position);
+  }
+  
+  @keyframes rise {
+    0% {
+      transform: translateY(0);
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+  
+  .footer {
+
+    color: white; /* Text color */
+    text-align: center;
+
+  }
+  
+
+
+  .info{
+    background-color: #00E0FF;
+    height: 100%;
+  }

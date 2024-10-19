@@ -13,7 +13,7 @@ const Sidebar = ({ isSidebarActive, toggleSidebar, darkMode, topics }) => {
             <ul>
                 {topics.map(topic => (
                     <li key={topic.name}>
-                        <Link href={`/?topic=${topic.file}`}>
+                        <Link href={`/?topic=${topic.file}`} scroll={false}>
                             {topic.name}
                         </Link>
                     </li>
@@ -68,7 +68,7 @@ const Homepage = () => {
         { name: "HTML", file: "html.md" },
         { name: "Django", file: "django.md" },
         { name: "Git and Github", file: "git.md" },
-        { name: "C++", file: "cpp.md" },  // This is the link for cpp.md
+        { name: "C++", file: "cpp.md" },
         { name: "SQL", file: "sql.md" },
         { name: "DevOps Stuff", file: "devops.md" }
     ];
@@ -94,9 +94,9 @@ const Homepage = () => {
         }
     }, [darkMode]);
 
-    // Fetch markdown only when on the client-side (after component mounts)
+    // Fetch markdown whenever the topic changes
     useEffect(() => {
-        if (typeof window !== "undefined") {
+        const fetchMarkdown = () => {
             const topic = new URLSearchParams(window.location.search).get("topic");
             if (topic) {
                 fetch(`/markdown/${topic}`)
@@ -104,8 +104,21 @@ const Homepage = () => {
                     .then(text => setMarkdownContent(text))
                     .catch(error => console.error("Error fetching markdown:", error));
             }
+        };
+
+        // Check if we are in the browser
+        if (typeof window !== "undefined") {
+            fetchMarkdown();
         }
-    }, []); // Empty dependency ensures it runs after the component mounts
+
+        // Optionally, you can add an event listener for popstate to handle back/forward navigation
+        const handlePopState = () => fetchMarkdown();
+
+        window.addEventListener("popstate", handlePopState);
+        return () => {
+            window.removeEventListener("popstate", handlePopState);
+        };
+    }, []); // Run once on mount
 
     const handleSearch = (e) => {
         e.preventDefault();

@@ -8,12 +8,12 @@ export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Toggle dark mode
+
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
-  // Persist dark mode setting in local storage
+  
   useEffect(() => {
     const savedMode = localStorage.getItem("darkMode");
     if (savedMode === "true") {

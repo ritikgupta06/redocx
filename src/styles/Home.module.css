@@ -1,161 +1,271 @@
-/* styles/Home.module.css */
-
-.container {
-  display: flex;
-}
-
-/* sidebar css*/
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  padding: 10px 15px;
-  font-size: 18px;
-  cursor: pointer;
-  border-radius: 4px;
-  color: #9e9c9c;
-}
-
-.sidebar ul li:hover {
-  background-color: #f2f2f2;
-}
-
-.sidebar ul li.active {
-  background-color: #ff6600;
-  color: #fff;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-
-  .navbar {
-    flex-direction: column;
-  }
-}
-.sidebar {
-  width: 250px;
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-right: 1px solid #717070;
-  height: 100vh;
-  position: fixed;
-  top: 10px;
-  left: 0;
-  overflow-y: auto;
-}
-
-.sidebar.dark {
-  background-color: #18191b;
-  color: #fff;
-}
-.logo {
-  color: #e76f51;
-  font-size: 25px;
-}
-
-/* navbar css */
-
-.navbar {
+.hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  border: 2px solid #e76f51;
-  background-color: white;
-  border-radius: 5px;
-  position: relative; /* Added to ensure z-index works */
-  z-index: 10; /* Higher z-index value to bring it above the sidebar */
-  width: 100%; /* Full width of the page */
+  padding: 50px 20px;
+
+  border-radius: 10px;
+
 }
 
-/* Add other styles as needed */
+.textSection {
+  flex: 1;
+  padding-right: 20px;
+}
 
-.logo {
-  font-size: 1.5rem;
+.title {
+  font-size: 2.5rem;
   font-weight: bold;
-  color: #e76f51;
+  color: #00E0FF;
+  margin-bottom: 10px;
 }
 
-.searchForm {
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
-}
-
-.searchWrapper {
-  display: flex;
-  align-items: center;
-  background-color: #e0e0e0;
-  border-radius: 20px;
-  padding: 5px 10px;
-}
-
-.searchIcon {
-  margin-right: 5px;
+.subtitle {
+  font-size: 1.2rem;
   color: #555;
+  margin-bottom: 20px;
 }
 
-.searchInput {
-  border: none;
-  background-color: transparent;
-  outline: none;
-  padding: 5px;
-}
-
-.icons {
-  display: flex;
-  align-items: center;
-}
-
-.icon {
-  font-size: 1.5rem;
-  margin-left: 20px;
-  cursor: pointer;
-}
-
-.toggleButton {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.dark {
-  background-color: #18191b;
+.ctaButton {
+  padding: 10px 20px;
+  font-size: 1rem;
   color: white;
+  background-color: #00E0FF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.dark .logo {
-  color: #e76f51;
+.ctaButton:hover {
+  background-color: #00E0FF;
 }
 
-.dark .searchWrapper {
-  background-color: #fe9d4ee0;
+.imageSection {
+  flex: 1;
+
 }
 
-.dark .searchInput {
-  color: rgb(0, 0, 0);
+.heroImage {
+  width: 100%;
+  border-radius: 50%;
+  height: 800px;
 }
 
-/* Mobile responsiveness */
+/* Responsive styling for mobile view */
 @media (max-width: 768px) {
-  .navbar {
+  .hero {
     flex-direction: column;
+    text-align: center;
   }
 
-  .searchForm {
-    margin: 10px 0;
+  .textSection {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .ctaButton {
+    margin-bottom: 20px;
+  }
+
+  .heroImage {
+    width: 100%;
+    height: auto;
   }
 }
-.lightButton {
-  color: #000000;
+
+
+
+
+/* button css  */
+
+
+
+
+
+.glowingBtn {
+  position: relative;
+  color: var(--glow-color);
+  cursor: pointer;
+  padding: 0.35em 1em;
+  border: 0.15em solid var(--glow-color);
+  border-radius: 0.45em;
+  background: none;
+  perspective: 2em;
+  font-family: "Raleway", sans-serif;
+  font-size: 2em;
+  font-weight: 900;
+  letter-spacing: 1em;
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  animation: border-flicker 2s linear infinite;
 }
-.darkButton {
-  color: #fff;
+
+.glowingTxt {
+  float: left;
+  margin-right: -0.8em;
+  -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
+    0 0 0.45em var(--glow-color);
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+  animation: text-flicker 3s linear infinite;
+}
+
+.faultyLetter {
+  opacity: 0.5;
+  animation: faulty-flicker 2s linear infinite;
+}
+
+.glowingBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.7;
+  filter: blur(1em);
+  transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
+  background: var(--glow-color);
+  pointer-events: none;
+}
+
+.glowingBtn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: -1;
+  background-color: var(--glow-color);
+  box-shadow: 0 0 2em 0.2em var(--glow-color);
+  transition: opacity 100ms linear;
+}
+
+.glowingBtn:hover {
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: none;
+  animation: none;
+}
+
+.glowingBtn:hover .glowingTxt {
+  animation: none;
+}
+
+.glowingBtn:hover .faultyLetter {
+  animation: none;
+  text-shadow: none;
+  opacity: 1;
+}
+
+.glowingBtn:hover:before {
+  filter: blur(1.5em);
+  opacity: 1;
+}
+
+.glowingBtn:hover:after {
+  opacity: 1;
+}
+
+@keyframes faulty-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 0.1;
+  }
+  4% {
+    opacity: 0.5;
+  }
+  19% {
+    opacity: 0.5;
+  }
+  21% {
+    opacity: 0.1;
+  }
+  23% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  83% {
+    opacity: 0.4;
+  }
+  87% {
+    opacity: 1;
+  }
+}
+
+@keyframes text-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 1;
+  }
+  8% {
+    opacity: 0.1;
+  }
+  9% {
+    opacity: 1;
+  }
+  12% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  72% {
+    opacity: 0.2;
+  }
+  77% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes border-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 1;
+  }
+  4% {
+    opacity: 0.1;
+  }
+  8% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .glowingBtn {
+    font-size: 1em;
+  }
 }
