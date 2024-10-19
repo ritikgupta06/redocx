@@ -85,7 +85,7 @@
 }
 
 .toggleButton.darkButton {
-  color: #ccb4b4; /* Dark mode button color */
+  color: #000000; /* Dark mode button color */
 }
 
 /* Optional: Add styles for dark mode in the body */
