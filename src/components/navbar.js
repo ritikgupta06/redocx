@@ -5,19 +5,18 @@ import { faSearch, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function Navbar() {
-  const [darkMode, setDarkMode] = useState(false);
+  // Set default darkMode to true
+  const [darkMode, setDarkMode] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
-
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
 
-  
   useEffect(() => {
     const savedMode = localStorage.getItem("darkMode");
-    if (savedMode === "true") {
-      setDarkMode(true);
+    if (savedMode !== null) {
+      setDarkMode(savedMode === "true");
     }
   }, []);
 
