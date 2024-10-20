@@ -1,6 +1,6 @@
 import Navbar from "@/components/navbar";
 import styles from '@/styles/doc_page.module.css';  // Assuming the CSS file is named DocPage.module.css
-
+import Footer from "@/components/footer";
 
 const DocPage = () => {
   return (
@@ -55,6 +55,7 @@ const DocPage = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };
