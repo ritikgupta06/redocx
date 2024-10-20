@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+.mainContainer {
+  /* background: linear-gradient(45deg, rgba(0, 212, 255, 1) 0%, rgba(11, 3, 45, 1) 100%); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  top: 200px;
+
+  overflow: auto; /* Allow scrolling for small screens */
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.25);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  width: 300px; /* Fixed width for larger screens */
+  min-width: 250px; /* Minimum width for smaller screens */
+  max-width: 100%; /* Prevents overflow */
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.bannerImage {
+  background-image: url(https://images.unsplash.com/photo-1641326201918-3cafc641038e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80);
+  background-position: center;
+  background-size: cover;
+  height: 200px;
+  border-radius: 12px;
+}
+
+.heading {
+  font-family: 'Righteous', sans-serif;
+  color: rgba(255, 255, 255, 0.98);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.text {
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
+.buttonWrapper {
+  margin-top: 15px;
+}
+
+.btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 24px;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.outline {
+  background: transparent;
+  color: rgba(0, 212, 255, 0.9);
+  border: 1px solid rgba(0, 212, 255, 0.6);
+  transition: all .3s ease;
+}
+
+.outline:hover {
+  transform: scale(1.1);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.fill {
+  background: rgba(0, 212, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
+  transition: all .3s ease;
+}
+
+.fill:hover {
+  transform: scale(1.1);
+}
+
+.butterfly {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  animation: fly 10s linear infinite;
+}
+
+@keyframes fly {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(150px, -50px) rotate(45deg); }
+  50% { transform: translate(100px, 100px) rotate(90deg); }
+  75% { transform: translate(50px, -50px) rotate(135deg); }
+  100% { transform: translate(0, 0) rotate(180deg); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .cardsContainer {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    align-items: center; /* Center the cards */
+  }
+
+  .card {
+    width: 90%; /* Make the cards take 90% of the container width */
+    margin-bottom: 20px; /* Space between stacked cards */
+  }
+}
