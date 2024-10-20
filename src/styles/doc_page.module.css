@@ -9,7 +9,7 @@
   padding: 20px;
   top: 200px;
 
-  overflow: auto; /* Allow scrolling for small screens */
+  overflow: auto; 
 }
 
 .cardsContainer {
@@ -37,7 +37,7 @@
 }
 
 .bannerImage {
-  background-image: url(https://images.unsplash.com/photo-1641326201918-3cafc641038e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80);
+  background-image: url(https://www.hubspot.com/hubfs/how-to-start-coding-1.jpg);
   background-position: center;
   background-size: cover;
   height: 200px;
@@ -75,7 +75,7 @@
 
 .outline {
   background: transparent;
-  color: rgba(0, 212, 255, 0.9);
+  color: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(0, 212, 255, 0.6);
   transition: all .3s ease;
 }

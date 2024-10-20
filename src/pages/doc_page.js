@@ -11,15 +11,15 @@ const DocPage = () => {
           <div className={styles.card}>
             <div className={styles.wrapper}>
               <div className={styles.bannerImage}></div>
-              <h1 className={styles.heading}>Toyota Supra</h1>
+              <h1 className={styles.heading}>React js</h1>
               <p className={styles.text}>
-                Lorem ipsum dolor sit amet, <br />
-                consectetur adipiscing elit.
+               Frontend development <br />
+
               </p>
             </div>
             <div className={styles.buttonWrapper}>
-              <button className={`${styles.btn} ${styles.outline}`}>DETAILS</button>
-              <button className={`${styles.btn} ${styles.fill}`}>BUY NOW</button>
+              <button className={`${styles.btn} ${styles.outline}`}>Watch</button>
+              <button className={`${styles.btn} ${styles.fill}`}>Read Docs</button>
             </div>
             <img src="/butterfly.png" alt="Butterfly" className={styles.butterfly} />
           </div>
@@ -27,14 +27,14 @@ const DocPage = () => {
             {/* Duplicate the same structure for each card */}
             <div className={styles.wrapper}>
               <div className={styles.bannerImage}></div>
-              <h1 className={styles.heading}>Card 2</h1>
+              <h1 className={styles.heading}>Java Script</h1>
               <p className={styles.text}>
-                Another car model here.
+                Script for Website
               </p>
             </div>
             <div className={styles.buttonWrapper}>
-              <button className={`${styles.btn} ${styles.outline}`}>DETAILS</button>
-              <button className={`${styles.btn} ${styles.fill}`}>BUY NOW</button>
+            <button className={`${styles.btn} ${styles.outline}`}>Watch</button>
+            <button className={`${styles.btn} ${styles.fill}`}>Read Docs</button>
             </div>
             <img src="/butterfly.png" alt="Butterfly" className={styles.butterfly} />
           </div>
@@ -42,14 +42,14 @@ const DocPage = () => {
             {/* Third card */}
             <div className={styles.wrapper}>
               <div className={styles.bannerImage}></div>
-              <h1 className={styles.heading}>Card 3</h1>
+              <h1 className={styles.heading}>Node js</h1>
               <p className={styles.text}>
-                Yet another car model.
+                Backend development
               </p>
             </div>
             <div className={styles.buttonWrapper}>
-              <button className={`${styles.btn} ${styles.outline}`}>DETAILS</button>
-              <button className={`${styles.btn} ${styles.fill}`}>BUY NOW</button>
+            <button className={`${styles.btn} ${styles.outline}`}>Watch</button>
+            <button className={`${styles.btn} ${styles.fill}`}>Read Docs</button>
             </div>
             <img src="/butterfly.png" alt="Butterfly" className={styles.butterfly} />
           </div>
