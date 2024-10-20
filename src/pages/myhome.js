@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Link from 'next/link';
 import styles from '@/styles/Home.module.css';
 
 
@@ -9,11 +9,13 @@ const Hero = () => {
       <div className={styles.textSection}>
         <h1 className={styles.title}>Welcome to Redocx</h1>
         <p className={styles.subtitle}>Your trusted documentation assistant</p>
-        <button className={styles.glowingBtn}>
-      <span className={styles.glowingTxt}>
-        RE<span className={styles.faultyLetter}>A</span>D
-      </span>
-    </button>
+        <Link href="/doc_page">
+  <button className={styles.glowingBtn}>
+    <span className={styles.glowingTxt}>
+      RE<span className={styles.faultyLetter}>A</span>D
+    </span>
+  </button>
+</Link>
       </div>
       <div className={styles.imageSection}>
         <img
