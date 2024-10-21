@@ -20,23 +20,37 @@
 
 
 
-
-
 /* styles/globals.css */
 pre {
   background-color: #97f3fff7; /* Light blue background */
   padding: 10px;
   border-radius: 5px;
   overflow-x: auto; /* For horizontal scrolling */
+  font-size: 1rem;
+  white-space: pre-wrap; /* Allow wrapping on smaller screens */
+  word-wrap: break-word; /* Break long words */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  pre {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
 }
 
 code {
-
   color: #000000;
   padding: 2px 4px;
   border-radius: 3px;
   font-family: monospace;
+  font-size: 0.95rem;
 }
 
-
-
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  code {
+    font-size: 0.85rem;
+    padding: 1px 3px;
+  }
+}
