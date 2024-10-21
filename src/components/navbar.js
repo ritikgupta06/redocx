@@ -3,6 +3,7 @@ import styles from "../styles/navbar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import Link from 'next/link';
 
 export default function Navbar() {
   // Set default darkMode to true
@@ -37,7 +38,9 @@ export default function Navbar() {
 
   return (
     <nav className={`${styles.navbar} ${darkMode ? styles.dark : ""}`}>
-      <div className={styles.logo}>Redocx</div>
+       <Link href="/" className={styles.logo}>
+        Redocx
+      </Link>
       <form className={styles.searchForm} onSubmit={handleSearch}>
         <div className={styles.searchWrapper}>
           <FontAwesomeIcon icon={faSearch} className={styles.searchIcon} />

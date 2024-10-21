@@ -17,10 +17,11 @@
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.5rem;          /* Your existing font size */
+  font-weight: bold;          /* Your existing font weight */
+  text-decoration: none;       /* Remove underline from the link */
+  color: inherit;              /* Inherit the color from the parent */
 }
-
 .searchForm {
   flex: 1;
   margin: 0 1rem;
