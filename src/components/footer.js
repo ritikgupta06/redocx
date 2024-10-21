@@ -20,7 +20,7 @@ const Footer = () => {
         ))}
       </div>
       <div className={styles.info}>
-      <p>© 2024 Your Company. All rights reserved.</p>
+        <p>© Redocx. All rights reserved.</p>
       </div>
     </footer>
   );
