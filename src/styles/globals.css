@@ -19,117 +19,24 @@
 
 
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 20px 20px 10px;
-  border: 2px solid #e76f51;
-  background-color: rgb(255, 255, 255);
+
+
+
+/* styles/globals.css */
+pre {
+  background-color: #97f3fff7; /* Light blue background */
+  padding: 10px;
   border-radius: 5px;
-  position: relative; /* Added to ensure z-index works */
-  z-index: 10; /* Higher z-index value to bring it above the sidebar */
-  width: 100%;
+  overflow-x: auto; /* For horizontal scrolling */
 }
 
-/* Add other styles as needed */
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #e76f51;
-}
+code {
 
-.searchForm {
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
-}
-
-.searchWrapper {
-  display: flex;
-  align-items: center;
-  background-color: #e0e0e0;
-  border-radius: 20px;
-  padding: 5px 10px;
-}
-
-.searchIcon {
-  margin-right: 5px;
-  color: #555;
-
-}
-
-.searchInput {
-  border: none;
-  background-color: transparent;
-  outline: none;
-  padding: 5px;
-
-}
-
-.icons {
-  display: flex;
-  align-items: center;
-}
-
-.icon {
-  font-size: 1.5rem;
-  margin-left: 20px;
-  cursor: pointer;
-}
-
-.toggleButton {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.dark {
-  background-color: #18191b;
-  color: white;
-}
-
-.dark .logo {
-  color: #e76f51;
-}
-
-.dark .searchWrapper {
-  background-color: #fe9d4ee0;
-}
-
-.dark .searchInput {
-  color: rgb(0, 0, 0);
-}
-
-.lightButton {
   color: #000000;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
 }
 
-.darkButton {
-  color: #fff;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: row; /* Stack items vertically on smaller screens */
-    align-items: flex-start;
-  }
-
-  .searchForm {
-    margin: 10px 0;
-    width: 100%;
-  }
-
-  .icons {
-    width: 100%;
-    justify-content: space-between; /* Space icons evenly on mobile */
-    margin-top: 10px;
-  }
-
-  .toggleButton {
-    margin-left: auto; /* Align toggle button to the right */
-  }
-}
 
 
