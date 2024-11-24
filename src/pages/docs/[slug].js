@@ -5,7 +5,7 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
-import styles from '@/styles/doc_page.module.css'; // Your CSS
+import styles from '@/styles/doc_page.module.css'; 
 
 const DocPage = ({ content, title }) => {
   const router = useRouter();
@@ -26,9 +26,8 @@ const DocPage = ({ content, title }) => {
   );
 };
 
-// This function generates the paths for the docs (react, javascript, node)
 export async function getStaticPaths() {
-  const slugs = ['react', 'javascript', 'node'];
+  const slugs = ['react', 'javascript', 'node' , 'github'];
 
   const paths = slugs.map(slug => ({
     params: { slug }
@@ -40,7 +39,6 @@ export async function getStaticPaths() {
   };
 }
 
-// This function fetches the markdown file content based on the slug
 export async function getStaticProps({ params }) {
   const { slug } = params;
 
@@ -53,7 +51,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       content,
-      title: slug.charAt(0).toUpperCase() + slug.slice(1), // Capitalize slug for title
+      title: slug.charAt(0).toUpperCase() + slug.slice(1), 
     },
   };
 }
