@@ -68,6 +68,21 @@ const DocPage = () => {
             </div>
             <img src="/butterfly.png" alt="Butterfly" className={styles.butterfly} />
           </div>
+
+          <div className={styles.card}>
+            <div className={styles.wrapper}>
+              <div className={styles.bannerImage}></div>
+              <h1 className={styles.heading}>Native</h1>
+              <p className={styles.text}>Native-Expo commands</p>
+            </div>
+            <div className={styles.buttonWrapper}>
+              <button className={`${styles.btn} ${styles.outline}`}>Watch</button>
+              <Link href="/docs/native">
+                <button className={`${styles.btn} ${styles.fill}`}>Read Docs</button>
+              </Link>
+            </div>
+            <img src="/butterfly.png" alt="Butterfly" className={styles.butterfly} />
+          </div>
         </div>
       </div>
       <Footer/>
