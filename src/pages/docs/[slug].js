@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router';
-import fs from 'fs';
-import path from 'path';
-import { remark } from 'remark';
-import html from 'remark-html';
-import Navbar from '@/components/navbar';
-import Footer from '@/components/footer';
-import styles from '@/styles/doc_page.module.css'; 
+import { useRouter } from "next/router";
+import fs from "fs";
+import path from "path";
+import { remark } from "remark";
+import html from "remark-html";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+import styles from "@/styles/doc_page.module.css";
 
 const DocPage = ({ content, title }) => {
   const router = useRouter();
@@ -27,10 +27,10 @@ const DocPage = ({ content, title }) => {
 };
 
 export async function getStaticPaths() {
-  const slugs = ['react', 'javascript', 'node' , 'github','native'];
+  const slugs = ["react", "javascript", "node", "github", "native", "aws"];
 
-  const paths = slugs.map(slug => ({
-    params: { slug }
+  const paths = slugs.map((slug) => ({
+    params: { slug },
   }));
 
   return {
@@ -42,8 +42,8 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { slug } = params;
 
-  const filePath = path.join(process.cwd(), 'public', 'markdown', `${slug}.md`);
-  const fileContents = fs.readFileSync(filePath, 'utf8');
+  const filePath = path.join(process.cwd(), "public", "markdown", `${slug}.md`);
+  const fileContents = fs.readFileSync(filePath, "utf8");
 
   const processedContent = await remark().use(html).process(fileContents);
   const content = processedContent.toString();
@@ -51,7 +51,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       content,
-      title: slug.charAt(0).toUpperCase() + slug.slice(1), 
+      title: slug.charAt(0).toUpperCase() + slug.slice(1),
     },
   };
 }
