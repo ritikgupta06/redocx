@@ -232,3 +232,67 @@ Before building your app, ensure everything is set up correctly:
     eas build --platform android --profile preview
 
     ```
+
+# Reducing File Size for Expo Native App
+
+A 161 MB project file size is relatively large for an Expo project. Here's how to reduce the size and build for Android and iOS using EAS.
+
+---
+
+## Reduce Project Size
+
+### 1\. Optimize Images and Assets
+
+Use tools like **TinyJPG** or **TinyPNG** to compress images without losing quality. Minimize the size of assets to enhance performance.
+
+### 2\. Remove Unused Dependencies
+
+Run the following command to clean up unused packages:
+
+```
+npm prune
+```
+
+### 3\. Check Versioned Files
+
+Ensure that only necessary files are tracked by your version control system. Review your `.gitignore` file to exclude unnecessary files, such as:
+
+- Logs (`*.log`)
+
+- Build artifacts (`build/`, `dist/`)
+
+- Node modules (`node_modules/`)
+
+### 4\. Use Expo Asset Optimization
+
+Run the following command to optimize all assets:
+
+```
+expo-optimize
+```
+
+---
+
+## Build Your Project with EAS
+
+### Build for Android
+
+To build your project for Android, run:
+
+```
+eas build --platform android
+```
+
+### Build for iOS
+
+To build your project for iOS, run:
+
+```
+eas build --platform ios
+```
+
+> **Note:** Ensure you have an Apple Developer account to successfully build for iOS.
+
+---
+
+Following these steps will help reduce your Expo project size and streamline the build process for both Android and iOS platforms.
