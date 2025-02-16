@@ -27,7 +27,15 @@ const DocPage = ({ content, title }) => {
 };
 
 export async function getStaticPaths() {
-  const slugs = ["react", "javascript", "node", "github", "native", "aws"];
+  const slugs = [
+    "react",
+    "javascript",
+    "node",
+    "github",
+    "native",
+    "aws",
+    "blockchain",
+  ];
 
   const paths = slugs.map((slug) => ({
     params: { slug },
